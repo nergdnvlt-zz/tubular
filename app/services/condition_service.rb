@@ -15,6 +15,8 @@ class ConditionService
   end
 
   def request
-    conn.get { |req| }
+    Rails.cache.fetch('current_conditions', :expires_in => 5.minutes) do
+      conn.get { |req| }
+    end
   end
 end
