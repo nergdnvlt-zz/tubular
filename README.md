@@ -1,6 +1,6 @@
 # README
 
-This is a quick application to analyze the recommendation of Tubing Temperatures in Boulder, CO.
+This is a quick application to analyze the recommendation of Tubing Conditions in Boulder, CO.
 
 It is built with Ruby/Rails and consumes an external API hosted on heroku.
 
