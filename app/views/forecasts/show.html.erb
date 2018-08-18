@@ -1,0 +1,13 @@
+<h1>Current Conditions in Boulder for Tubing</h1>
+
+<h3>Weather Conditions:</h3>
+<ul>
+  <li class="current_temp">Current Temperature: <%= @forecast.current_temp %> degrees</li>
+  <li class="current_conditions">Current Cloud Coverage: <%= @forecast.current_clouds %></li>
+  <li class="current_flow">Current Flow Rate: <%= @forecast.current_flow %> CFS</li>
+</ul>
+
+<h3>Recommendation:</h3>
+<ul>
+  <li class="recommendation"><%=  @forecast.recommendation %></li>
+</ul>
