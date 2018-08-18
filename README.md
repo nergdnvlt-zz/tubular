@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a quick application to analyze the recommendation of Tubing Temperatures in Boulder, CO.
 
-Things you may want to cover:
+It is built with Ruby/Rails and consumes an external API hosted on heroku.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+There isn't any styling as the main focus was the feature of getting information from the external API, then making a recommendation based on that information.
