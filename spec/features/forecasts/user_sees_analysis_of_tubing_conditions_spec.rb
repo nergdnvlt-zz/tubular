@@ -8,11 +8,15 @@ describe 'User visits the root page' do
 
       # User sees the current weather conditions
       expect(page).to have_css('.current_temp')
+      expect(page).to have_content('Current Temperature: 66 degrees')
       expect(page).to have_css('.current_conditions')
+      expect(page).to have_content('Current Cloud Coverage: partly cloudy')
       expect(page).to have_css('.current_flow')
+      expect(page).to have_content('Current Flow Rate: 106 CFS')
 
       # User will also see a recommendation of the tubing conditions
       expect(page).to have_css('.recommendation')
+      expect(page).to have_content('Sorry, not now. Maybe Later.')
     end
   end
 end
