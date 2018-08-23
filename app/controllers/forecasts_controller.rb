@@ -1,5 +1,5 @@
 class ForecastsController < ApplicationController
   def show
-    @forecast = Forecast.new()
+    @forecast = ConditionService.forecast
   end
 end
