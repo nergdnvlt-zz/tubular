@@ -1,5 +1,7 @@
 class ForecastsController < ApplicationController
   def show
-    @forecast = ConditionService.forecast
+    slug = params[:name]
+    binding.pry
+    @forecast = Forecast.find_by(name: slug)
   end
 end
