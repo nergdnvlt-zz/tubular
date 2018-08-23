@@ -7,6 +7,9 @@ describe 'User visits the root page' do
         # User visits the root page
         visit '/'
 
+        click_on 'Boulder Creek'
+        expect(current_path).to eq('/boulder_creek')
+
         # User sees the current weather conditions
         expect(page).to have_css('.current_temp')
         expect(page).to have_content('Current Temperature: 69 degrees')
