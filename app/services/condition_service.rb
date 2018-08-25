@@ -1,7 +1,7 @@
 class ConditionService
 
-  def forecast
-    Forecast.new(response)
+  def self.response
+    new().response
   end
 
   def response
