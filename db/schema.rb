@@ -10,9 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_08_23_232840) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "base_conditions", force: :cascade do |t|
+    t.string "name"
+    t.float "min_temp", default: 85.0
+    t.integer "min_flow", default: 40
+    t.float "max_flow", default: 300.0
+    t.string "acceptable_clouds", array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "current_conditions", force: :cascade do |t|
+    t.string "name"
+    t.bigint "base_condition_id"
+    t.float "current_temp"
+    t.float "current_flow"
+    t.string "current_clouds"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["base_condition_id"], name: "index_current_conditions_on_base_condition_id"
+  end
 
 end
