@@ -13,7 +13,6 @@ require 'vcr'
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/cassettes'
   config.hook_into :webmock
-  config.filter_sensitive_data('<GITHUB_API_KEY>') { ENV['github_api_key'] }
 end
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -68,6 +67,18 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  DatabaseCleaner.strategy = :truncation
+
+  RSpec.configure do |c|
+    c.before(:each) do
+      DatabaseCleaner.clean
+    end
+
+    c.after(:each) do
+      DatabaseCleaner.clean
+    end
+    c.include Capybara::DSL
+  end
 end
 
 Shoulda::Matchers.configure do |config|
