@@ -9,7 +9,6 @@ class UpdateConditionService
       current_flow: @request[:flow_rate_cfs],
       current_clouds: @request[:weather_condition])
     @condition.save
-    @condition
   end
 
   private
