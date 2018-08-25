@@ -22,7 +22,8 @@ describe 'Update Condition Service' do
           ]
         )
         CurrentCondition.create!(name: 'boulder_creek', base_condition: base, current_temp: 85, current_flow: 88, current_clouds: 'Clear')
-        condition = UpdateConditionService.condition('boulder_creek')
+        result = UpdateConditionService.condition('boulder_creek')
+        condition = CurrentCondition.find_by(name: 'boulder_creek')
 
         expect(condition.current_temp).to_not eq(85)
         expect(condition.current_flow).to_not eq(88)
