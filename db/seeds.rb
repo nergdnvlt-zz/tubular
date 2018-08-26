@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-BaseCondition.create!(
+base = BaseCondition.create!(
   name: 'boulder_creek',
   min_temp: 85,
   min_flow: 40,
